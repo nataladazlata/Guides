@@ -1,0 +1,15 @@
+### Prerequisites:
+
+- install the two necessary nodes and fully synchronize them
+- since the relay process must be able to request the network back in height for at least 2/3 of the unbonding period (trusting period = 2/3 of the unbonding period), it is recommended to use pruning settings that will keep the full state of the chain for a longer period of time than unbonding period
+- if the nodes are not on a server with a relay, then you need to open RPC ports for Hermes
+- indexing on nodes should be set to kv
+- you need to create separate wallets for relaying and replenish them
+- install Hermes
+
+```mkdir -p $HOME/.hermes/bin
+
+wget https://github.com/informalsystems/hermes/releases/download/v1.0.0/hermes-v1.0.0-x86_64-unknown-linux-gnu.tar.gz && \
+tar -C $HOME/.hermes/bin/ -vxzf hermes-v1.0.0-x86_64-unknown-linux-gnu.tar.gz && \
+echo 'export PATH="$HOME/.hermes/bin:$PATH"' >> $HOME/.bash_profile && \
+source $HOME/.bash_profile```
